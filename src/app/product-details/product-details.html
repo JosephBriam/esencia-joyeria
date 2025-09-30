@@ -1,0 +1,26 @@
+<div *ngIf="producto; else noEncontrado" class="container mt-4">
+  <h2>{{ producto.nombre }}</h2>
+  <p><strong>Precio:</strong> S/. {{ producto.precio }}</p>
+  <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+  <p><strong>SKU:</strong> {{ producto.sku }}</p>
+
+  <!-- Aquí usas el model-viewer -->
+  <model-viewer
+  src="{{ producto.model }}"
+  alt="{{ producto.nombre }}"
+  poster="{{ producto.poster }}"
+  auto-rotate
+  camera-controls
+  ar
+  style="width: 400px; height: 400px;">
+</model-viewer>
+  
+
+  <a routerLink="/productos" class="btn btn-secondary mt-3">Volver a productos</a>
+</div>
+
+<ng-template #noEncontrado>
+  <div class="alert alert-danger mt-4">
+    Producto no encontrado.
+  </div>
+</ng-template>

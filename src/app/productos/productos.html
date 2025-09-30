@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let p of productos">
+    <div class="card h-100 shadow-sm">
+      <img [src]="p.poster" class="card-img-top" alt="{{p.nombre}}">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{p.nombre}}</h5>
+        <p class="card-text">SKU: {{p.sku}}</p>
+        <p class="fw-bold">S/ {{p.precio}}</p>
+        <a [routerLink]="['/productos', p.id]" class="btn btn-outline-dark">Ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
